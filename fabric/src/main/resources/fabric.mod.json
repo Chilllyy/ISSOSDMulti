@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "id": "issosdmulti",
+  "version": "${version}",
+  "name": "ISSOSDMulti",
+  "description": "A mod for monitoring the current level of the Urine Tank on the International Space Station",
+  "authors": [
+    "Chilly_Willy"
+  ],
+  "contact": {
+    "homepage": ""
+  },
+  "license": "All-Rights-Reserved",
+  "icon": "assets/issosdmulti/textures/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "me.chillywilly.issosdmulti.fabric.IssosdmultiFabric"
+    ],
+    "client": [
+      "me.chillywilly.issosdmulti.fabric.client.IssosdmultiFabricClient"
+    ],
+    "modmenu": [
+      "me.chillywilly.issosdmulti.fabric.client.ISSModMenu"
+    ]
+  },
+  "mixins": [
+    "issosdmulti.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.18.0",
+    "minecraft": "~1.21.11",
+    "java": ">=21",
+    "architectury": ">=${architectury_api_version}",
+    "fabric-language-kotlin": ">=${fabrickotlin_version}"
+
+  },
+  "suggests": {
+    "modmenu": "*"
+  }
+}

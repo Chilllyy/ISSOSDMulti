@@ -1,0 +1,74 @@
+plugins {
+    id 'com.github.johnrengelman.shadow'
+}
+
+architectury {
+    platformSetupLoomIde()
+    fabric()
+}
+
+configurations {
+    common {
+        canBeResolved = true
+        canBeConsumed = false
+    }
+    compileClasspath.extendsFrom common
+    runtimeClasspath.extendsFrom common
+    developmentFabric.extendsFrom common
+
+    // Files in this configuration will be bundled into your mod using the Shadow plugin.
+    // Don't use the `shadow` configuration from the plugin itself as it's meant for excluding files.
+    shadowBundle {
+        canBeResolved = true
+        canBeConsumed = false
+    }
+}
+
+dependencies {
+    modImplementation "net.fabricmc:fabric-loader:$rootProject.fabric_loader_version"
+
+
+    modImplementation "dev.architectury:architectury-fabric:$rootProject.architectury_api_version"
+
+    common(project(path: ':common', configuration: 'namedElements')) { transitive false }
+    shadowBundle project(path: ':common', configuration: 'transformProductionFabric')
+
+    modImplementation "net.fabricmc:fabric-language-kotlin:$rootProject.fabrickotlin_version"
+    modImplementation "com.terraformersmc:modmenu:$rootProject.modmenu_version"
+
+    implementation "com.lightstreamer:ls-javase-client:$rootProject.lightstreamer_version"
+    include "com.lightstreamer:ls-javase-client:$rootProject.lightstreamer_version"
+    include "com.squareup.okhttp3:okhttp-urlconnection:$rootProject.okhttp_version"
+    include "com.squareup.okhttp3:okhttp:$rootProject.okhttp_version"
+    include "com.fasterxml.jackson.core:jackson-core:$rootProject.jackson_version"
+    include "com.fasterxml.jackson.core:jackson-databind:$rootProject.jackson_version"
+    include "com.squareup.okio:okio-jvm:$rootProject.okio_version"
+    include "com.squareup.okio:okio:$rootProject.okio_version"
+
+    implementation "com.moandjiezana.toml:toml4j:0.7.2"
+    include "com.moandjiezana.toml:toml4j:0.7.2"
+
+}
+
+processResources {
+    inputs.property 'version', project.version
+    inputs.property 'architectury_api_version', rootProject.architectury_api_version
+    inputs.property 'fabrickotlin_version', rootProject.fabrickotlin_version
+
+    filesMatching('fabric.mod.json') {
+        expand (
+                version: project.version,
+                architectury_api_version: rootProject.architectury_api_version,
+                fabrickotlin_version: rootProject.fabrickotlin_version
+        )
+    }
+}
+
+shadowJar {
+    configurations = [project.configurations.shadowBundle]
+    archiveClassifier = 'dev-shadow'
+}
+
+remapJar {
+    input.set shadowJar.archiveFile
+}

@@ -1,0 +1,47 @@
+modLoader = "javafml"
+loaderVersion = "[2,)"
+#issueTrackerURL = ""
+license = "All Rights Reserved"
+
+[[mods]]
+modId = "issosdmulti"
+version = "${version}"
+displayName = "ISSOSDMulti"
+authors = "Chilly_Willy"
+description = '''
+A mod for monitoring the current level of the Urine Tank on the International Space Station
+'''
+logoFile = "assets/issosdmulti/textures/icon.png"
+
+[[dependencies.issosdmulti]]
+modId = "neoforge"
+type = "required"
+versionRange = "[21,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.issosdmulti]]
+modId = "minecraft"
+type = "required"
+versionRange = "[1.21.11,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.issosdmulti]]
+modId = "architectury"
+type = "required"
+versionRange = "[${architectury_api_version},)"
+ordering = "AFTER"
+side = "BOTH"
+
+[[dependencies.issosdmulti]]
+modId = "kotlinforforge"
+type = "required"
+versionRange = "[${kotlinforforge_version},)"
+ordering = "AFTER"
+side = "BOTH"
+
+
+
+[[mixins]]
+config = "issosdmulti.mixins.json"
