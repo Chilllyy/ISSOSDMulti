@@ -30,7 +30,7 @@ Released on
 https://youtu.be/JwjpDEqPBoI
 
 # How to Build
-Make sure you have JDK 25 installed, I recommend [Adoptium](https://adoptium.net/temurin/releases?version=21&os=any&arch=any)
+Make sure you have JDK 21 installed, I recommend [Adoptium](https://adoptium.net/temurin/releases?version=21&os=any&arch=any)
 ```
 git clone https://github.com/Chilllyy/ISSOSDMulti
 (on linux) chmod +x gradlew
