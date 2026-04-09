@@ -10,7 +10,5 @@ dependencies {
 
     modImplementation "dev.architectury:architectury:$rootProject.architectury_api_version"
 
-    implementation "com.lightstreamer:ls-javase-client:$rootProject.lightstreamer_version"
-
     implementation "com.moandjiezana.toml:toml4j:0.7.2"
 }
