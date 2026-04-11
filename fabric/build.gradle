@@ -36,12 +36,8 @@ dependencies {
     modImplementation "net.fabricmc:fabric-language-kotlin:$rootProject.fabrickotlin_version"
     modImplementation "com.terraformersmc:modmenu:$rootProject.modmenu_version"
 
-    implementation "com.lightstreamer:ls-javase-client:$rootProject.lightstreamer_version"
-    include "com.lightstreamer:ls-javase-client:$rootProject.lightstreamer_version"
-    include "com.squareup.okhttp3:okhttp-urlconnection:$rootProject.okhttp_version"
+    implementation "com.squareup.okhttp3:okhttp:$rootProject.okhttp_version"
     include "com.squareup.okhttp3:okhttp:$rootProject.okhttp_version"
-    include "com.fasterxml.jackson.core:jackson-core:$rootProject.jackson_version"
-    include "com.fasterxml.jackson.core:jackson-databind:$rootProject.jackson_version"
     include "com.squareup.okio:okio-jvm:$rootProject.okio_version"
     include "com.squareup.okio:okio:$rootProject.okio_version"
 
