@@ -45,6 +45,7 @@ dependencies {
 
     modImplementation("thedarkcolour:kotlinforforge-neoforge:$rootProject.kotlinforforge_version")
 
+    implementation "com.squareup.okhttp3:okhttp:$rootProject.okhttp_version"
     include "com.squareup.okhttp3:okhttp:$rootProject.okhttp_version"
     include "com.squareup.okio:okio-jvm:$rootProject.okio_version"
     include "com.squareup.okio:okio:$rootProject.okio_version"
