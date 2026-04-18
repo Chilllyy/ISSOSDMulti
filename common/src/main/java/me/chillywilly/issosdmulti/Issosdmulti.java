@@ -2,6 +2,7 @@ package me.chillywilly.issosdmulti;
 
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
+import com.mojang.authlib.minecraft.client.MinecraftClient;
 import dev.architectury.event.events.client.ClientGuiEvent;
 import dev.architectury.event.events.client.ClientLifecycleEvent;
 import net.minecraft.client.Minecraft;
@@ -52,6 +53,7 @@ public final class Issosdmulti {
 
         ClientGuiEvent.RENDER_HUD.register((matrices, tickDelta) -> {
             if (!config.getEnabled()) return;
+            if (Minecraft.getInstance().options.hideGui) return;
             int color = 0xFFA87132;
             int x_start = (int) (matrices.guiWidth() * config.getX());
             int y_start = (int) (matrices.guiHeight() * config.getY());
