@@ -11,6 +11,9 @@ Released on
 # Recommended mods
 [ModMenu](https://modrinth.com/mod/modmenu) (allows editing the config in-game on fabric)
 
+# In Game Photo
+  ![Ingame Photo](ingame.png)
+
 # Features TODO
 - NeoForge Config Screen
 - Migrate from live Lightstreamer data to self-hostable server (allows me to simplify the jarfile and dependencies, aswell as handle jitters better for all of the ISS projects)
